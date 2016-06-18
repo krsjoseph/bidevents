@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require chosen-jquery
+//= require wow
 //= require_tree .
+
+
+jQuery(function() {
+    return $('.chzn-select').chosen();
+});

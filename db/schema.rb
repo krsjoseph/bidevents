@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160618183728) do
+ActiveRecord::Schema.define(version: 20160618225940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(version: 20160618183728) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+  create_table "event_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.string   "short_description"
@@ -40,6 +46,8 @@ ActiveRecord::Schema.define(version: 20160618183728) do
     t.integer  "budget"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "type"
+    t.string   "people"
   end
 
   create_table "suppliers", force: :cascade do |t|
@@ -48,6 +56,13 @@ ActiveRecord::Schema.define(version: 20160618183728) do
     t.string   "things_supplied"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "rating"
+  end
+
+  create_table "things", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

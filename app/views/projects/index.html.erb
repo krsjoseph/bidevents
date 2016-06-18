@@ -3,11 +3,12 @@
   <% @projects.each do |project| %>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title"><%= project.name %> - $<%= project.budget %></h3>
+          <h3 class="panel-title"><%= project.name %> for <%= project.people %> people</h3>
         </div>
         <div class="panel-body">
           <p><%= project.long_description %></p>
-          <p>Things needed: <span style="font-weight: bold"><%= project.things_required %></span></p>
+          <p>Services needed: <span style="font-weight: bold"><%= project.things_required.delete('[]"')  %></span></p>
+          <p>Budget - $<%= project.budget %> </p>
           <p style="font-weight: bold"></p>
         </div>
         <div class="panel-footer">
@@ -15,7 +16,6 @@
         </div>
       </div>
   <% end %>
-
   <%= link_to 'New Project', new_project_path %>
 </div>
 </div>

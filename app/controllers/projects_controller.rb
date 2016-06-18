@@ -3,7 +3,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    @projects = Project.all
+    @projects = Project.all.reverse_order
+
   end
 
   # GET /projects/1
@@ -53,6 +54,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:name, :short_description, :things_required, :long_description, :budget)
+      params.require(:project).permit(:name, :short_description, {:things_required => []}, :long_description, :budget, :type, :people )
     end
 end

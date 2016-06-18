@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :event_type do
+    name "MyString"
+  end
+  factory :thing do
+    name "MyString"
+  end
   factory :supplier do
     name "MyString"
     description "MyString"
