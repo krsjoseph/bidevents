@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Description</th>
       <th>Things supplied</th>
       <th colspan="3"></th>
     </tr>
@@ -15,6 +16,7 @@
     <% @suppliers.each do |supplier| %>
       <tr>
         <td><%= supplier.name %></td>
+        <td><%= supplier.description %></td>
         <td><%= supplier.things_supplied %></td>
         <td><%= link_to 'Show', supplier %></td>
         <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>

@@ -1,40 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Short description</th>
-      <th>Things required</th>
-      <th>Long description</th>
-      <th>Budget</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.short_description %></td>
-        <td><%= project.things_required %></td>
-        <td><%= project.long_description %></td>
-        <td><%= project.budget %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
-
-
 <div class="container">
 <div class="row">
   <% @projects.each do |project| %>
@@ -53,6 +16,6 @@
       </div>
   <% end %>
 
-
+  <%= link_to 'New Project', new_project_path %>
 </div>
 </div>

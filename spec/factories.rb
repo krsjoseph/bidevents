@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :supplier do
     name "MyString"
+    description "MyString"
     things_supplied "MyString"
   end
   factory :project do
