@@ -4,10 +4,12 @@ ruby "2.3.1"
 
 gem "autoprefixer-rails"
 gem "bourbon", "5.0.0.beta.5"
+gem 'bootstrap-sass', '~> 3.3.6'
 gem "delayed_job_active_record"
 gem "flutie"
 gem "honeybadger"
 gem "jquery-rails"
+gem 'jbuilder', '~> 2.0'
 gem "neat", "~> 1.7.0"
 gem "normalize-rails", "~> 3.0.0"
 gem "pg"

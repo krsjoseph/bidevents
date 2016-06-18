@@ -1,9 +1,13 @@
 @charset "utf-8";
 
 @import "normalize-rails";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+//@import "bourbon";
+//@import "neat";
 
-@import "bourbon";
-@import "neat";
+//@import "base/base";
+//@import "refills/flashes";
 
-@import "base/base";
-@import "refills/flashes";
+
+@import "partials/home";
