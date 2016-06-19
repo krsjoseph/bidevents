@@ -1,19 +1,64 @@
-<p id="notice"><%= notice %></p>
+<div class="hero-unit-supplier" style="margin-top: -20px">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 style="" class="wow fadeIn" ><%= @supplier.name %></h1>
+        <h2> <%= @supplier.description %></h2>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @supplier.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @supplier.description %>
-</p>
+<div class="container" style="margin-top: 50px">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-4">
+          <img class="img-thumbnail img-responsive" src="http://www.bouncerskingdom.com/wp-content/uploads/2016/02/20150606_092416-400x400.jpg" >
+        </div>
+        <div class="col-md-4">
+          <img class="img-thumbnail img-responsive" src="http://assets.cdn.newmediaretailer.com/146000/146095/hec-worldwide-sports_bounce_house..jpg" >
+        </div>
+        <div class="col-md-4">
+          <img class="img-thumbnail img-responsive" src="http://assets.cdn.newmediaretailer.com/146000/146095/hec-worldwide-sports_bounce_house..jpg" >
+        </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Things supplied:</strong>
-  <%= @supplier.things_supplied %>
-</p>
+    <div class="col-md-3 col-md-offset-1">
+      <h3 style="margin-top: 0">Reviews</h3>
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object img-circle" src="https://placehold.it/45" alt="..." c>
+          </a>
+        </div>
+        <div class="media-body">
+          <h5 class="media-heading">Krs J</h5>
+          <ul style="padding-left: 0">
+            <li style="list-style: none">
+              <img src="http://edumovlive.com/wp-content/uploads/2015/11/four-stars_0.png" alt="" class="img-responsive" width="100px">
+              Quality
+            </li>
+            <li style="list-style: none; ">
+              <img src="http://edumovlive.com/wp-content/uploads/2015/11/four-stars_0.png" alt="" class="img-responsive" width="100px">
+              <p>Timeliness</p>
+            </li>
+            <li style="list-style: none; ">
+              <img src="http://edumovlive.com/wp-content/uploads/2015/11/four-stars_0.png" alt="" class="img-responsive" width="100px">
+              <p>Professionalism</p>
+            </li>
+          </ul>
 
-<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
-<%= link_to 'Back', suppliers_path %>
+          <p>"This guy has really great bouncy castles!"</p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+

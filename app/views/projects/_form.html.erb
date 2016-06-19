@@ -9,7 +9,9 @@
       <%= f.input :name %>
       <%# f.input :short_description %>
       <%= f.input :people, :label => "Amount Of People" %>
-      <%= f.input :things_required, collection: Thing.all, :input_html => {:class => "chzn-select",  multiple: true  }, value_method: :name,
+      <%= f.input :things_required, collection: Thing.all,
+                  :input_html => {:class => "chzn-select", multiple: true  },
+                  value_method: :name,
                   :label => "Services Needed"%>
       <%= f.input :long_description, as: :text, :label => "Description"  %>
       <%= f.input :budget %>

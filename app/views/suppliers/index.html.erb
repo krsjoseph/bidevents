@@ -2,7 +2,7 @@
   <div class="row">
     <% @suppliers.each do |supplier| %>
         <div class="col-md-2 col-md-offset-2">
-          <img src="http://www.opencartarabic.com/image/cache/catalog/icons/supplier-icon-500x500.png" class="img-responsive img-thumbnail img-circle">
+          <img src="http://placehold.it/300" class="img-responsive img-thumbnail img-circle">
         </div>
         <div class="col-md-8">
           <h1><%= supplier.name %></h1>
@@ -11,6 +11,9 @@
           <h4><%= supplier.description %></h4>
           <h5><%= supplier.things_supplied %></h5>
           <%= link_to 'View Supplier', supplier, class: "btn btn-primary" %>
+        </div>
+        <div class="col-md-12">
+          <hr>
         </div>
     <% end %>
   </div>

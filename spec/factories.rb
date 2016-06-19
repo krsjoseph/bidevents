@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :bid do
+    supplier_id 1
+    project_id 1
+    bid ""
+  end
   factory :event_type do
     name "MyString"
   end

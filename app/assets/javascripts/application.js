@@ -12,11 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require chosen-jquery
 //= require wow
 //= require_tree .
 
 
-jQuery(function() {
-    return $('.chzn-select').chosen();
+
+
+$( document ).ready(function() {
+    $(function() {
+        return $('.chzn-select').chosen({
+            allow_single_deselect: true,
+            no_results_text: 'No results matched',
+            width: '100%'
+        });
+    });
+    console.log( "ready!" );
 });

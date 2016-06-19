@@ -1,21 +1,89 @@
 <div class="container">
 <div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <% @projects.each do |project| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= project.name %> for <%= project.people %> people</h3>
+          </div>
+          <div class="panel-body">
+            <p><%= project.long_description %></p>
+            <p>Services needed: <span style="font-weight: bold"><%= project.things_required.delete('[]"')  %></span></p>
+            <p>Budget - $<%= project.budget %> </p>
+            <p style="font-weight: bold"></p>
+
+            <h5><%= project.bids.count %> Current Bids</h5>
+
+            <% project.bids.each do |bid| %>
+                <ul style="padding-left: 0">
+                  <li style="list-style: none">
+                    <p class="strong">
+                      Supplier Kxxxx Jxxx - $<%= bid.bid %>
+                    </p>
+                  </li>
+                </ul>
+
+            <% end %>
+
+
+          </div>
+          <div class="panel-footer">
+            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#<%= project.id %>">Bid To Supply This Event</a>
+          </div>
+        </div>
+
+
+
+
+    <% end %>
+    <%# link_to 'New Project', new_project_path %>
+  </div>
+</div>
+
+
+
+
+  <!-- Modal -->
   <% @projects.each do |project| %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= project.name %> for <%= project.people %> people</h3>
+  <div class="modal fade" id="<%= project.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Place Bid To Supply <%= project.name %></h4>
         </div>
-        <div class="panel-body">
-          <p><%= project.long_description %></p>
-          <p>Services needed: <span style="font-weight: bold"><%= project.things_required.delete('[]"')  %></span></p>
-          <p>Budget - $<%= project.budget %> </p>
-          <p style="font-weight: bold"></p>
+        <%= simple_form_for(Bid.new) do |f| %>
+        <div class="modal-body">
+
+
+
+              <%= f.error_notification %>
+
+              <div class="form-inputs">
+                <% f.input :supplier_id %>
+                <%= f.input :project_id, :input_html => { :value => "#{project.id}" }, :as => :hidden %>
+                <%= f.input :bid, :label => "Bid Amount" %>
+                <%= f.input :things_supplied, collection: Thing.all,
+                            :input_html => {:class => "chzn-select", multiple: true  },
+                            value_method: :name,
+                    :label => "What Can You Supply?" %>
+
+              </div>
+
+              <div class="form-actions">
+              </div>
+
+
         </div>
-        <div class="panel-footer">
-          <a href="" class="btn btn-primary">Bid To Supply This Event</a>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <%= f.button :submit, :class => "btn btn-success" %>
         </div>
+            <% end %>
       </div>
+    </div>
+  </div>
   <% end %>
-  <%= link_to 'New Project', new_project_path %>
+
 </div>
-</div>
+
