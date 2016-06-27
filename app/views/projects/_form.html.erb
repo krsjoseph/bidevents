@@ -14,10 +14,11 @@
                   value_method: :name,
                   :label => "Services Needed"%>
       <%= f.input :long_description, as: :text, :label => "Description"  %>
+
       <%= f.input :budget %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit %>
+      <%= f.button :submit, :class => "btn btn-success", :value => "Create Event" %>
     </div>
 <% end %>

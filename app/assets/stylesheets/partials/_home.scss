@@ -1,7 +1,7 @@
 .hero-unit {
   background-image: url('https://picjumbo.imgix.net/IMG_8407.jpg?q=40&w=1650&sharp=30');
   background-size: cover;
-  background-color: #EEEEEE;
+  //background-color: #525252;
   height: 90vh;
   h1 {
     color: #FFFFFF;
@@ -30,3 +30,14 @@
   height: 250px;
   color: white;
 }
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  //padding: 15px;
+  width: auto;
+  padding: 7px 15px;
+}
+
