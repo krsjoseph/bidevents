@@ -6,7 +6,7 @@ gem "autoprefixer-rails"
 gem "bourbon", "5.0.0.beta.5"
 gem 'compass-rails'
 
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'chosen-rails', '~> 1.5', '>= 1.5.2'
 gem "delayed_job_active_record"
 gem "flutie"
